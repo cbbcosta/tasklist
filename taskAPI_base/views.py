@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.views import APIView
 
-from taskAPI_base.models import Task
+from taskAPI_base.models import Task, Category, SubCategory
 from taskAPI_base.serializers import TaskSerializer
 
 
@@ -22,3 +23,4 @@ class Task_Detail(RetrieveUpdateDestroyAPIView):
     """
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
+    

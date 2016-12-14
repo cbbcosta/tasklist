@@ -6,10 +6,19 @@ from taskAPI_base.serializers import TaskSerializer
 
 
 class Task_List_Create(ListCreateAPIView):
+    """
+    GET: Retorna todas as tarefas existentes.
+    POST: Cria uma nova tarefa.
+    """
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
     
     
 class Task_Detail(RetrieveUpdateDestroyAPIView):
+    """
+    GET: Retorna uma nova tarefa passando o id.
+    POST: Edita uma tarefa passando o id (na URL).
+    DELETE: Exclui uma tarefa passando o id.
+    """
     queryset = Task.objects.all()
     serializer_class = TaskSerializer

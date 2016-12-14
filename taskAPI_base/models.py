@@ -14,6 +14,9 @@ class Task(models.Model):
         verbose_name = 'task'
         verbose_name_plural = 'tasks'
         db_table = 'tasklist_task'
+        
+    def __str__(self):
+        return self.title
     
 
 class Category (models.Model):
@@ -23,6 +26,9 @@ class Category (models.Model):
         verbose_name = 'category'
         verbose_name_plural = 'categories'
         db_table = 'tasklist_category'
+        
+    def __str__(self):
+        return self.description
 
 
 class SubCategory(models.Model):
@@ -34,3 +40,5 @@ class SubCategory(models.Model):
         verbose_name_plural = 'subcategories'
         db_table = 'tasklist_subcategory'
     
+    def __str__(self):
+        return self.description
